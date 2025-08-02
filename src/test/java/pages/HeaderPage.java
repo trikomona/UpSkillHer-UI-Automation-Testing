@@ -54,7 +54,7 @@ public WebDriver driver;
     }//Contact
     public void clickOnAdmin() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(amenities));
+        WebElement link = wait.until(ExpectedConditions.elementToBeClickable(admin));
         link.click();
     }//Admin
 

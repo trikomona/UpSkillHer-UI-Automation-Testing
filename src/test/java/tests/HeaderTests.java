@@ -9,7 +9,8 @@ public class HeaderTests extends Base {
 
     @Test
     public void ClickOnLinkShadyMeadowsOfHeader() {
-        HeaderPage header = new HeaderPage(driver);
+        HeaderPage header = new HeaderPage(driver);  //instancia la clase
+        //se comienza a llamar con los metodos
         header.clickOnShadyMeadows();   // Hace clic en Shady Meadows
     }//ClickOnLinkShadyMeadowsOfHeader
     @Test

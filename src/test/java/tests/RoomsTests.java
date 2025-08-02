@@ -4,22 +4,22 @@ import base.Base;
 import org.testng.annotations.Test;
 import pages.RoomsPage;
 
-public class RoomsTest extends Base {
-
+public class RoomsTests extends Base {
+//prueba TC-009-TC-010
     @Test
 
     public void SuccessfullyPageLoadedAndRoomsVisible (){
         RoomsPage rooms = new RoomsPage(driver);
         rooms.clickOnRooms();   // Hace clic en link Rooms
 
-        //repito esa serie por que el link de Rooms no esta habilitado
+        //probar Single Room
         rooms.clickOnBtnSingleRoom(); //click en boton de habitacion Single
         rooms.clickOnHomeLink(); //click en link regresar a Home
         rooms.clickOnRooms();   // Hace clic en link Rooms
 
         rooms.clickOnBtnDoubleRoom(); //click en boton de habitacion doble
-        rooms.clickOnHomeLink(); //click en link regresar a Home
-        rooms.clickOnRooms();   // Hace clic en link Rooms
+        rooms.clickOnHomeLink();
+        rooms.clickOnRooms();
 
         rooms.clickOnBtnSuiteRoom(); //click en boton de habitacion Suite
         rooms.clickOnHomeLink(); //click en link regresar a Home
