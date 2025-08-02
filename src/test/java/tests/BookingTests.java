@@ -51,7 +51,7 @@ public class BookingTests extends Base {
 
     @Test
 
-    public void FillTheFormPartiallyWithOutName () {
+    public void FillTheFormPartiallyWithOutName () {   //TC-014   deberia fallar sin el nombre
         BookingPage booking = new BookingPage(driver);
         booking.clickOnBooking();
         booking.selectInputToChooseCheckIn();
@@ -66,6 +66,23 @@ public class BookingTests extends Base {
         booking.fillFormWithKeys("", "Camargo", "pablitocam@gmail.com", "9234067891234");
         booking.clickOnBtnReserveNow();
     }//FillTheFormPartiallyWithOutName
+
+    @Test
+    public void ValidateFuncionalityOfCancelButton () { //TC-0015
+        BookingPage booking = new BookingPage(driver);
+        booking.clickOnBooking();
+        booking.selectInputToChooseCheckIn();
+        booking.selectMonthToCheckIn();
+        booking.selectDayToCheckIn();
+        booking.selectInputToChooseCheckOut();
+        booking.selectMonthToCheckOut();
+        booking.selectDayToCheckOut();
+        booking.clickButtonOfAvailabilityAfterChooseDate();
+        booking.clickOnBtnSingleRoom();
+        booking.clickOnBtnReserveNow();
+        booking.fillFormWithKeys("Dino", "Cazares", "dinocazam@gmail.com", "9634437897834");
+        booking.clickCancelReservation();
+    }//ValidateFuncionalityOfCancelButton
 
 
 }//BookingTests

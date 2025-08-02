@@ -136,15 +136,17 @@ public class BookingPage extends BookingMap {
       driver.findElement(inputEmail).sendKeys(email);
       driver.findElement(inputPhone).sendKeys(phone);
       try {
-       Thread.sleep(5000);
-      } catch (InterruptedException e) {
+       Thread.sleep(4000);
+      } catch (InterruptedException e) {  //lo agregue con la finalidad de ver el comportamiento, se debe borrar
         e.printStackTrace();
       }
   }//fillFormWithKeys
 
 
     public void clickCancelReservation() {
-        driver.findElement(btnCancel).click();
+        WebElement cancelBtn = driver.findElement(btnCancel);
+        scroll(cancelBtn);
+        cancelBtn.click();
     }//clickCancelReservation
 
 }//BookingPage

@@ -6,6 +6,7 @@ import pages.RoomsPage;
 
 public class RoomsTests extends Base {
 //prueba TC-009-TC-010
+
     @Test
 
     public void SuccessfullyPageLoadedAndRoomsVisible (){
