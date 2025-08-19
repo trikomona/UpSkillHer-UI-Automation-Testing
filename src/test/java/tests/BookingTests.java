@@ -1,13 +1,13 @@
 package tests;
 
 import base.Base;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.BookingPage;
 
 public class BookingTests extends Base {
 
     @Test
-
     public void CompleteFlowValidationToBookARoomWithValidKeys (){ //TC-011
         BookingPage booking = new BookingPage(driver);
         booking.clickOnBooking();
@@ -22,14 +22,12 @@ public class BookingTests extends Base {
         booking.clickOnBtnReserveNow();
         booking.fillFormWithKeys("Pablito", "Camargo", "pablitocam@gmail.com", "9234067891234");
         booking.clickOnBtnReserveNow();
-
-
-
-
+        String message = booking.getBookingConfirmationMessage(); //revisar este metodo por que falla la pagina
+        Assert.assertTrue(message.contains("Booking Confirmed"), "El mensaje de confirmación no coincide");
     }//CompleteFlowValidationToBookARoomWithValidKeys
 
-    @Test
 
+    @Test
     public void CompleteFlowValidationToBookARoomWithInvalidDates () {//TC-012
         BookingPage booking = new BookingPage(driver);
         booking.clickOnBooking();
@@ -45,12 +43,9 @@ public class BookingTests extends Base {
         booking.clickOnBtnReserveNow();
         booking.fillFormWithKeys("Juanita", "Perez", "juanitaperez@gmail.com", "1234567891234");
         booking.clickOnBtnReserveNow();
-
-
     }//CompleteFlowValidationToBookARoomWithInvalidKeys
 
     @Test
-
     public void FillTheFormPartiallyWithOutName () {   //TC-014   deberia fallar sin el nombre
         BookingPage booking = new BookingPage(driver);
         booking.clickOnBooking();
@@ -66,6 +61,7 @@ public class BookingTests extends Base {
         booking.fillFormWithKeys("", "Camargo", "pablitocam@gmail.com", "9234067891234");
         booking.clickOnBtnReserveNow();
     }//FillTheFormPartiallyWithOutName
+
 
     @Test
     public void ValidateFuncionalityOfCancelButton () { //TC-0015

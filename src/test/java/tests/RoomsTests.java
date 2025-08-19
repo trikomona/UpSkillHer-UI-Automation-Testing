@@ -8,7 +8,6 @@ public class RoomsTests extends Base {
 //prueba TC-009-TC-010
 
     @Test
-
     public void SuccessfullyPageLoadedAndRoomsVisible (){
         RoomsPage rooms = new RoomsPage(driver);
         rooms.clickOnRooms();   // Hace clic en link Rooms
@@ -25,6 +24,6 @@ public class RoomsTests extends Base {
         rooms.clickOnBtnSuiteRoom(); //click en boton de habitacion Suite
         rooms.clickOnHomeLink(); //click en link regresar a Home
         rooms.clickOnRooms();   // Hace clic en link Rooms
-
     }//SuccessfullyPageLoadedAndRoomsVisible
+
 }//RoomsTests

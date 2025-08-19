@@ -4,7 +4,7 @@ import base.Base;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AmenitiesPage;
-import pages.BookingPage;
+
 
 public class AmenitiesTests extends Base {
 
@@ -14,10 +14,7 @@ public class AmenitiesTests extends Base {
         AmenitiesPage amenities = new AmenitiesPage(driver);
         amenities.clickOnAmenities();
         boolean sectionVisible = amenities.isAmenitiesSectionDisplayed(); //debe fallar
-
         Assert.assertTrue(sectionVisible, "La sección de Amenities NO se mostró, pero esperábamos que SÍ cargara.");
-
-
-
+        //falla como se espera
     }//ValidateSectionOfAmenities
 }//AmenitiesTests

@@ -1,6 +1,7 @@
 package pages;
 
 import maps.BookingMap;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -129,6 +130,13 @@ public class BookingPage extends BookingMap {
         link.click();
     }//clickOnBtnReserveNow
 
+    public String getBookingConfirmationMessage() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebElement confirmation = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//*[contains(text(),'Booking Confirmed')]")));
+        return confirmation.getText(); // trim() elimina espacios al inicio o final
+    }
+
   // **************************Forumulario*****************************************************
   public void fillFormWithKeys(String firstName, String lastName, String email, String phone) {
       driver.findElement(inputFirsName).sendKeys(firstName);
@@ -136,7 +144,7 @@ public class BookingPage extends BookingMap {
       driver.findElement(inputEmail).sendKeys(email);
       driver.findElement(inputPhone).sendKeys(phone);
       try {
-       Thread.sleep(4000);
+       Thread.sleep(3000);
       } catch (InterruptedException e) {  //lo agregue con la finalidad de ver el comportamiento, se debe borrar
         e.printStackTrace();
       }

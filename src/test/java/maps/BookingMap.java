@@ -35,6 +35,9 @@ public class BookingMap {
 
     //boton Reserv now
     public By btnReserveNow = By.xpath("//button[text()='Reserve Now']");
+
+    //texto al reservar exitosamente
+    public By bookingConfirmation =By.xpath("//*[contains(text(),'Booking Confirmed')]");
     //llenado de formulario
     public By inputFirsName = By.xpath("//input[@placeholder='Firstname']");
     public By inputLastName = By.xpath("//input[@placeholder='Lastname']");
