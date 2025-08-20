@@ -17,4 +17,6 @@ public class AmenitiesTests extends Base {
         Assert.assertTrue(sectionVisible, "La sección de Amenities NO se mostró, pero esperábamos que SÍ cargara.");
         //falla como se espera
     }//ValidateSectionOfAmenities
+
+
 }//AmenitiesTests

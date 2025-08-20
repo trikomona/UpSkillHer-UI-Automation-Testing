@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class BookingMap {
 
 
-    //Localizadores de los elementos en seccion Booking que nos lleva a Roonms
+    //Localizadores de los elementos en seccion Booking que nos lleva a Booking
 
     //*****************************SELECCIONAR FECHA PARA RESERVAR*******************
     public By booking = By.xpath("//li[@class='nav-item']//a[text()='Booking']");
