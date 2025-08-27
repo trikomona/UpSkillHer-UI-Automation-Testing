@@ -1,6 +1,7 @@
 package tests;
 
 import base.Base;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.BookingPage;
@@ -60,6 +61,9 @@ public class BookingTests extends Base {
         booking.clickOnBtnReserveNow();
         booking.fillFormWithKeys("", "Camargo", "pablitocam@gmail.com", "9234067891234");
         booking.clickOnBtnReserveNow();
+        String errorMessage = booking.getMessageText(By.id("name-err"));
+        Assert.assertEquals(errorMessage, "Firstname should not be blank");
+
     }//FillTheFormPartiallyWithOutName
 
 

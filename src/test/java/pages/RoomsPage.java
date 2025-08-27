@@ -59,11 +59,14 @@ public class RoomsPage extends RoomsMap {
         link.click();
     }//linkToBackHome
 
+
+
     //metodo scroll para ubicar el elemento
     public void scroll(WebElement element){
     Actions actions = new Actions(driver);
     actions.moveToElement(element);
     actions.perform();
     }//scroll
+
 
 }//RoomsPage

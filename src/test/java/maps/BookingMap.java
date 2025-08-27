@@ -43,9 +43,11 @@ public class BookingMap {
     public By inputLastName = By.xpath("//input[@placeholder='Lastname']");
     public By inputEmail = By.xpath("//input[@placeholder='Email']");
     public By inputPhone = By.xpath("//input[@placeholder='Phone']");
+    public By monthReserve = By.xpath("//span[@class='rbc-toolbar-label']");
 
     //botones debajo de formulario
     public By btnReserveNow2 = By.xpath("//button[text()='Reserve Now']");
     public By btnCancel = By.xpath("//button[text()='Cancel']");
+    public By msjNameIsRequired = By.xpath("//li[text()='Firstname should not be blank']");
 
 }//Booking Map

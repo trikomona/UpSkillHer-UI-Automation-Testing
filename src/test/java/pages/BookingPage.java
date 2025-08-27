@@ -87,6 +87,7 @@ public class BookingPage extends BookingMap {
     public void selectDayToCheckOut (){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement link = wait.until(ExpectedConditions.elementToBeClickable(btnDayCheckOut));
+        scroll(link);
         link.click();
 
     }//SelectDayToCheckIn
@@ -156,6 +157,14 @@ public class BookingPage extends BookingMap {
         scroll(cancelBtn);
         cancelBtn.click();
     }//clickCancelReservation
+
+    public String getMessageText(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement messageElement = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(msjNameIsRequired)
+        );
+        return messageElement.getText();
+    }
 
 }//BookingPage
 

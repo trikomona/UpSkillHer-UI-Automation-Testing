@@ -5,14 +5,13 @@ import pages.HeaderPage;
 import org.testng.annotations.Test;
 
 public class HeaderTests extends Base {
-    //pruebas TC-001 a TC-008, PERO Amenities en teoria deberia fallar, por que no carga nada
+    //pruebas TC-001 a TC-007, PERO Amenities en teoria deberia fallar, por que no carga nada
 
     @Test
     public void ClickOnLinkShadyMeadowsOfHeader() {
         HeaderPage header = new HeaderPage(driver);  //instancia la clase
         //se comienza a llamar con los metodos
         header.clickOnShadyMeadows();   // Hace clic en Shady Meadows
-
         //Validación con assert para corroborar la prueba
         Assert.assertTrue(driver.getCurrentUrl().contains("automationintesting.online"),
                 "No es la URL esperada");
